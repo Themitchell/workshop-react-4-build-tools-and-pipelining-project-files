@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './src/app.js',
+  entry: './src/app.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'
@@ -21,5 +21,18 @@ module.exports = {
       template: path.join('src', 'index.template.html'),
       inject: 'body'
     })
-  ]
+  ],
+
+  resolve: {
+    extensions: ['.js', '.json', '.jsx']
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.jsx$/,
+        use: 'babel-loader'
+      }
+    ]
+  }
 };
