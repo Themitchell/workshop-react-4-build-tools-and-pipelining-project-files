@@ -1,9 +1,7 @@
-import { sayHello } from './mymodule';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
-function run () {
-  sayHello();
-};
+const container = document.getElementById('app');
+const root = createRoot(container);
 
-window.app = {
-  run: run
-};
+root.render("Hello");
