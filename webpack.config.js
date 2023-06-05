@@ -9,7 +9,7 @@ let config = {
   entry: './src/app.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'app.bundle.js'
+    filename: '[name].[contenthash].bundle.js'
   },
 
   devServer: {
@@ -37,6 +37,19 @@ let config = {
         use: 'babel-loader'
       }
     ]
+  },
+
+  optimization: {
+    minimize: false,
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendor',
+          chunks: 'all',
+          test: /node_modules/
+        }
+      },
+    }
   }
 };
 
