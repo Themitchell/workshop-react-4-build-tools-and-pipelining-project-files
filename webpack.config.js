@@ -1,8 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TerserPlugin = require("terser-webpack-plugin");
 
-module.exports = {
-  mode: 'development',
+const ENV = process.env.NODE_ENV || 'development';
+
+let config = {
+  mode: ENV,
   entry: './src/app.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -36,3 +39,12 @@ module.exports = {
     ]
   }
 };
+
+if (ENV === 'production') {
+  config.optimization = Object.assign(config.optimization || {}, {
+    minimize: true,
+    minimizer: [new TerserPlugin()]
+  })
+}
+
+module.exports = config;
