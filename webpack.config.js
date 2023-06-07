@@ -19,6 +19,8 @@ let config = {
     port: 9000,
   },
 
+  devtool: 'source-map',
+
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join('src', 'index.template.html'),
@@ -40,7 +42,6 @@ let config = {
   },
 
   optimization: {
-    minimize: false,
     splitChunks: {
       cacheGroups: {
         vendor: {
