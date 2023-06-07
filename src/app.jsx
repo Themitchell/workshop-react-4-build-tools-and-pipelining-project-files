@@ -6,4 +6,4 @@ import styles from './app.css'
 const container = document.getElementById('app');
 const root = createRoot(container);
 
-root.render(<h1 className={styles.redThing}>Hello</h1>);
+root.render(<h1 className={styles.redThing}>Hello from Australia</h1>);

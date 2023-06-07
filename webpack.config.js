@@ -50,7 +50,8 @@ let config = {
                 localIdentName: '[local]_[hash:base64:5]'
               },
             },
-          }
+          },
+          "postcss-loader"
         ]
       }
     ]

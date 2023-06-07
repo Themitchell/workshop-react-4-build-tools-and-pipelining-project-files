@@ -1,4 +1,5 @@
 .redThing {
   border: 1px solid red;
   color: red;
+  transform: rotate(180deg);
 }
