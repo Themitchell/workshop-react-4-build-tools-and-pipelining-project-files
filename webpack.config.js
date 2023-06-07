@@ -37,6 +37,10 @@ let config = {
       {
         test: /\.jsx$/,
         use: 'babel-loader'
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
@@ -56,7 +60,7 @@ let config = {
 
 if (ENV === 'production') {
   config.optimization = Object.assign(config.optimization || {}, {
-    minimize: true,
+    minimize: false,
     minimizer: [new TerserPlugin()]
   })
 }

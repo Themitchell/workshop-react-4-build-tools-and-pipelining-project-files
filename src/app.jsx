@@ -1,9 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
+import './app.css'
+
 const container = document.getElementById('app');
 const root = createRoot(container);
 
-throw new Error("Oh dear I have broken something");
-
-root.render(<h1>Hello</h1>);
+root.render(<h1 className="red-thing">Hello</h1>);
